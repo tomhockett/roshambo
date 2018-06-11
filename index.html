@@ -35,33 +35,27 @@
       }
 
       if (playerSelection === 'Rock') {
-        // Comp chooses 'Paper' and comp wins
         if (computerSelection === 'Paper') {
           return "You lose! Paper wraps Rock!"
         }
-        // Comp chooses 'Scissors' and player wins
         if (computerSelection === 'Scissors') {
           return "You win! Rock smashes Scissors!"
         }
       } 
       
       else if (playerSelection === 'Paper') {
-        // Comp chooses 'Rock' and player wins
         if (computerSelection === 'Rock') {
           return "You win! Paper wraps Rock!"
         }
-        // Comp chooses 'Scissors' and comp wins
         if (computerSelection === 'Scissors') {
           return "You lose! Scissors cuts Paper!"
         }
       } 
       
       else if (playerSelection === 'Scissors') {
-        // Comp chooses 'Rock' and comp wins
         if (computerSelection === 'Rock'){
           return "You lose! Rock smashes Scissors!"
         }
-        // Comp chooses 'Paper' and player wins
         if (computerSelection === 'Paper') {
           return "You win! Scissors cuts Paper!"
         }
