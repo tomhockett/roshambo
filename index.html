@@ -8,6 +8,13 @@
 </head>
 <body>
   <script>
+    // Takes a value from the player and formats it properly
+    function fixUserInput(input) {
+      const inputArray = input.toLowerCase().split('');
+      inputArray[0] = inputArray[0].toUpperCase();
+      return inputArray.join('');
+    }
+
     // Computer randomly selects 'Rock,' 'Paper,' or 'Scissors'
     function computerPlay() {
       const randomPlay = Math.floor(Math.random() * 3) + 1
@@ -20,8 +27,14 @@
           break;
         case 3:
           return 'Scissors';
-          break
+          break;
       }
+    }
+
+    // A function that plays a single round of Roshambo
+    function gameRound(playerSelection, computerSelection = computerPlay()) {
+      const playerChoice = fixUserInput(playerSelection);
+      return `${playerChoice} and ${computerSelection}`
     }
   
   </script>
