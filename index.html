@@ -23,18 +23,8 @@
 
     // Computer randomly selects 'Rock,' 'Paper,' or 'Scissors'
     function computerPlay() {
-      const randomPlay = Math.floor(Math.random() * 3) + 1
-      switch (randomPlay) {
-        case 1:
-          return 'Rock';
-          break;
-        case 2:
-          return 'Paper';
-          break;
-        case 3:
-          return 'Scissors';
-          break;
-      }
+      const moves = ['Rock', 'Paper', 'Scissors']
+      return moves[Math.floor(Math.random() * 3)]
     }
 
     // A function that plays a single round of Roshambo
