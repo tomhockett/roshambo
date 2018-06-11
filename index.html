@@ -32,9 +32,43 @@
     }
 
     // A function that plays a single round of Roshambo
-    function gameRound(playerSelection, computerSelection = computerPlay()) {
+    function gameRound(playerSelection, computerSelection) {
       const playerChoice = fixUserInput(playerSelection);
-      return `${playerChoice} and ${computerSelection}`
+      
+      if (playerChoice === computerSelection) {
+        return "It's a tie! Play again?"
+      }
+
+      if (playerChoice === 'Rock') {
+        // Comp chooses 'Paper' and comp wins
+        if (computerSelection === 'Paper') {
+          return "You lose! Paper wraps Rock!"
+        }
+        // Comp chooses 'Scissors' and player wins
+        if (computerSelection === 'Scissors') {
+          return "You win! Scissors cuts Paper!"
+        }
+      } else if (playerChoice === 'Paper') {
+        // Comp chooses 'Rock' and player wins
+        if (computerSelection === 'Rock') {
+          return "You win! Paper wraps Rock!"
+        }
+        // Comp chooses 'Scissors' and comp wins
+        if (computerSelection === 'Scissors') {
+          return "You lose! Scissors cuts Paper!"
+        }
+      } else if (playerChoice === 'Scissors') {
+        // Comp chooses 'Rock' and comp wins
+        if (computerSelection === 'Rock'){
+          return "You lose! Rock smashes Scissors!"
+        }
+        // Comp chooses 'Paper' and player wins
+        if (computerSelection === 'Paper') {
+          return "You win! Scissors cuts Paper!"
+        }
+      } else {
+        return 'Something went wrong! 😐'
+      }
     }
   
   </script>
