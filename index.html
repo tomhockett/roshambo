@@ -31,33 +31,33 @@
     function playRound(playerSelection = userInput(), computerSelection = computerPlay()) {
       
       if (playerSelection == computerSelection) {
-        return "It's a tie!"
+        return { message: "It's a tie!", score: 0 }
       }
 
       if (playerSelection == 'Rock') {
         if (computerSelection == 'Paper') {
-          return "You lose! Paper wraps Rock!"
+          return { message: "You lose! Paper wraps Rock!", score: -1 }
         }
         if (computerSelection == 'Scissors') {
-          return "You win! Rock smashes Scissors!"
+          return { message: "You win! Rock smashes Scissors!", score: 1 }
         }
       } 
       
       else if (playerSelection == 'Paper') {
         if (computerSelection == 'Rock') {
-          return "You win! Paper wraps Rock!"
+          return { message: "You win! Paper wraps Rock!", score: 1 }
         }
         if (computerSelection == 'Scissors') {
-          return "You lose! Scissors cuts Paper!"
+          return { message: "You lose! Scissors cuts Paper!", score: -1 }
         }
       } 
       
       else if (playerSelection == 'Scissors') {
         if (computerSelection == 'Rock'){
-          return "You lose! Rock smashes Scissors!"
+          return { message: "You lose! Rock smashes Scissors!", score: -1 }
         }
         if (computerSelection == 'Paper') {
-          return "You win! Scissors cuts Paper!"
+          return { message: "You win! Scissors cuts Paper!", score: 1 }
         }
       } 
       
